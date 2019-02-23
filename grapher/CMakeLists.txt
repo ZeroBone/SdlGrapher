@@ -15,7 +15,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES main.cpp src/App.c++ src/App.h src/Grapher.c++ src/Grapher.h)
 add_executable(zavu ${SOURCE_FILES})
 
 
