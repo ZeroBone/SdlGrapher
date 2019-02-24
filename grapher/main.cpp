@@ -7,7 +7,9 @@
 
 double mathF(double x) {
 
-    return sin(x);
+    // return sin(x);
+
+    return cos(x);
 
 }
 

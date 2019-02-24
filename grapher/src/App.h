@@ -5,12 +5,10 @@
 
 class App {
 
-    private:
+    protected:
 
     bool running;
     SDL_Window* window;
-
-    protected:
 
     SDL_Renderer* renderer;
     SDL_Event currentEvent;
@@ -22,8 +20,6 @@ class App {
     ~App();
 
     virtual void init(const char* title);
-
-    void handleEvents();
 
     virtual void render(float deltaTime) {
 

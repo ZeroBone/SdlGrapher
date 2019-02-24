@@ -35,19 +35,3 @@ void App::init(const char* title) {
     running = true;
 
 }
-
-void App::handleEvents() {
-
-    while (SDL_PollEvent(&currentEvent)) {
-
-        switch (currentEvent.type) {
-
-            case SDL_QUIT:
-                running = false;
-                break;
-
-        }
-
-    }
-
-}
