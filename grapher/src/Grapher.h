@@ -3,6 +3,7 @@
 
 #include <SDL_ttf.h>
 #include <limits>
+#include <cmath>
 #include "App.h"
 
 typedef double (*mathFunction_t)(double);
@@ -62,8 +63,10 @@ class Grapher : public App {
 
     static bool mathValueValid(double mathValue) {
 
-        return mathValue != std::numeric_limits<double>::quiet_NaN() &&
-        mathValue != std::numeric_limits<double>::infinity();
+        return !std::isnan(mathValue) && !std::isinf(mathValue);
+
+        /*return mathValue != std::numeric_limits<double>::quiet_NaN() &&
+        mathValue != std::numeric_limits<double>::infinity();*/
 
     }
 

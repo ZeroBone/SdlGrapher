@@ -7,9 +7,18 @@
 
 double mathF(double x) {
 
-    // return sin(x);
+    // return 1 / x;
 
-    return cos(x);
+    /*if (x < 0.001) {
+        return std::numeric_limits<double>::quiet_NaN();
+    }
+
+    return log(x);*/
+
+    // return sin(x);
+    // return cos(x);
+
+    return (3.0 * sin(x / 4.0)) - (2.0 / sin(2.0 * x));
 
 }
 

@@ -138,13 +138,17 @@ void Grapher::renderGraph() {
         double mathY = mathFunction(mathX);
 
         if (!mathValueValid(mathY)) {
+            // std::cout << "Invalid value" << std::endl;
             invalidValue = true;
             continue;
         }
 
+
+
         if (invalidValue) {
             invalidValue = false;
         }
+        else if (fabs(startMathY - mathY) > 50.) {}
         else {
 
             SDL_RenderDrawLine(
@@ -207,6 +211,14 @@ void Grapher::handleEvents() {
                 // std::cout << currentEvent.key.keysym.scancode << std::endl;
 
                 switch (currentEvent.key.keysym.scancode) {
+
+                    case SDL_SCANCODE_UP:
+                        cy += 2;
+                        break;
+
+                    case SDL_SCANCODE_DOWN:
+                        cy -= 2;
+                        break;
 
                     case SDL_SCANCODE_LEFT:
                         cx += 2;
