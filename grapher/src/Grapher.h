@@ -35,6 +35,7 @@ class Grapher : public App {
     void render(float deltaTime) override;
     void renderAxes();
     void renderGraph();
+    void adjustForInterval(double intervalStart, double intervalEnd);
     void handleEvents();
 
     double screenXToMathX(int screenX) {

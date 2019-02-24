@@ -3,7 +3,17 @@
 #include <string>
 #include <iostream>
 
-Grapher::~Grapher() {}
+Grapher::~Grapher() = default;
+
+void Grapher::adjustForInterval(double intervalStart, double intervalEnd) {
+
+    double distance = intervalEnd - intervalStart;
+
+    cx = (int)(-intervalStart * vWidth / distance);
+
+    scale = vWidth / distance;
+
+}
 
 void Grapher::run() {
 
@@ -143,8 +153,6 @@ void Grapher::renderGraph() {
             continue;
         }
 
-
-
         if (invalidValue) {
             invalidValue = false;
         }
@@ -228,6 +236,25 @@ void Grapher::handleEvents() {
                         cx -= 2;
                         break;
 
+                    case SDL_SCANCODE_I:
+
+                        double start;
+                        double end;
+
+                        std::cout << "Enter interval beginning:" << std::endl;
+                        std::cin >> start;
+                        std::cout << "Enter interval end:" << std::endl;
+                        std::cin >> end;
+
+                        if (start >= end) {
+                            std::cout << "Invalid interval." << std::endl;
+                            break;
+                        }
+
+                        adjustForInterval(start, end);
+
+                        break;
+
                     default:
                         break;
 
@@ -235,6 +262,8 @@ void Grapher::handleEvents() {
 
                 break;
 
+            default:
+                break;
 
         }
 
