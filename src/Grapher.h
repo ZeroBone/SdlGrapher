@@ -19,16 +19,13 @@ class Grapher : public App {
 
     public:
 
-    Grapher(int vWidth, int vHeight, mathFunction_t mathFunction) :
-        mathFunction(mathFunction),
-        cx(vWidth / 2),
-        cy(vHeight / 2),
-        App(vWidth, vHeight) {}
+    Grapher(mathFunction_t mathFunction) : mathFunction(mathFunction) {}
 
     ~Grapher();
 
     void run();
     void init(const char* title, const char* fontFile);
+    void onResized();
 
     private:
 

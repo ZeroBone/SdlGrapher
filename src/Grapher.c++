@@ -127,7 +127,19 @@ void Grapher::init(const char* title, const char* fontFile) {
 
     App::init(title);
 
+    cx = vWidth / 2;
+    cy = vHeight / 2;
+
     labelFont = TTF_OpenFont(fontFile, 10);
+
+}
+
+void Grapher::onResized() {
+
+    App::onResized();
+
+    cx = vWidth / 2;
+    cy = vHeight / 2;
 
 }
 
@@ -178,6 +190,8 @@ void Grapher::renderGraph() {
 
 void Grapher::render() {
 
+    // std::cout << "W: " << vWidth << " H: " << vHeight << std::endl;
+
     renderAxes();
 
     renderGraph();
@@ -191,6 +205,19 @@ void Grapher::handleEvents() {
     while (SDL_PollEvent(&currentEvent)) {
 
         switch (currentEvent.type) {
+
+            case SDL_WINDOWEVENT_RESIZED:
+            case SDL_WINDOWEVENT_SIZE_CHANGED:
+                onResized();
+                break;
+
+            case SDL_WINDOWEVENT:
+
+                if (currentEvent.window.event == SDL_WINDOWEVENT_RESIZED) {
+                    onResized();
+                }
+
+                break;
 
             case SDL_QUIT:
                 running = false;

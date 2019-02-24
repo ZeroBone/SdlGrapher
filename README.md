@@ -8,3 +8,9 @@ It's goal is also to demonstrate **floating-point precision errors**, that's why
 * No rendering if the math function returns `NaN` or `Infinity`.
 * Movable axises. Screen => Math, Math => Screen unit converters.
 * Automatically calculate scale and axis position based on interval of the math function.
+* Pixel perfect rendering.
+
+## Demo
+![Sin demo](/screenshots/sin.png)
+![Log demo](/screenshots/log.png)
+![Sin2 demo](/screenshots/sin2.png)

@@ -24,7 +24,7 @@ double mathF(double x) {
 
 int main(int argc, char* argv[]) {
 
-    Grapher* grapher = new Grapher(640, 480, mathF);
+    Grapher* grapher = new Grapher(mathF);
 
     grapher->init("Grapher", "arial.ttf");
 

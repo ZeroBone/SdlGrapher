@@ -2,6 +2,7 @@
 #define ZAVU_APP_H
 
 #include <SDL.h>
+#include <iostream>
 
 class App {
 
@@ -16,7 +17,7 @@ class App {
 
     public:
 
-    App(int vWidth, int vHeight);
+    App();
     ~App();
 
     virtual void init(const char* title);
@@ -24,6 +25,14 @@ class App {
     virtual void render() {
 
         SDL_RenderPresent(renderer);
+
+    }
+
+    virtual void onResized() {
+
+        // std::cout << "resized" << std::endl;
+
+        SDL_GetRendererOutputSize(renderer, &vWidth, &vHeight);
 
     }
 
