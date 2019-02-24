@@ -1,4 +1,5 @@
 #include "App.h"
+#include <SDL_ttf.h>
 
 App::App(int vWidth, int vHeight): vWidth(vWidth), vHeight(vHeight) {}
 App::~App() {}
@@ -22,6 +23,11 @@ void App::init(const char* title) {
     renderer = SDL_CreateRenderer(window, -1, 0);
 
     if (!renderer) {
+        running = false;
+        return;
+    }
+
+    if (TTF_Init() < 0) {
         running = false;
         return;
     }

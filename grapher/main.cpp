@@ -2,12 +2,12 @@
 #include "src/Grapher.h"
 #include <math.h>
 #include <SDL.h>
-#include "SDL_ttf.h"
+
 #include <limits>
 
 double mathF(double x) {
 
-    return x;
+    return sin(x);
 
 }
 
@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
 
     Grapher* grapher = new Grapher(640, 480, mathF);
 
-    grapher->init("Grapher");
+    grapher->init("Grapher", "arial.ttf");
 
     grapher->run();
 

@@ -1,6 +1,7 @@
 #ifndef ZAVU_GRAPHER_H
 #define ZAVU_GRAPHER_H
 
+#include <SDL_ttf.h>
 #include "App.h"
 
 typedef double (*mathFunction_t)(double);
@@ -11,6 +12,8 @@ class Grapher : public App {
 
     mathFunction_t mathFunction;
     int cx = 320, cy = 240;
+    double scale = 50;
+    TTF_Font* labelFont;
 
     public:
 
@@ -19,6 +22,7 @@ class Grapher : public App {
     ~Grapher();
 
     void run();
+    void init(const char* title, const char* fontFile);
 
     private:
 
@@ -28,19 +32,19 @@ class Grapher : public App {
 
     double screenXToMathX(int screenX) {
 
-        return screenX - cx;
+        return (screenX - cx) / scale;
 
     }
 
     int mathXToScreenX(double mathX) {
 
-        return cx + mathX;
+        return cx + (int)(mathX * scale);
 
     }
 
     int mathYToScreenY(double mathY) {
 
-        return cy - mathY;
+        return cy - (int)(mathY * scale);
 
     }
 

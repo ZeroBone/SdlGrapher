@@ -21,7 +21,7 @@ class App {
     App(int vWidth, int vHeight);
     ~App();
 
-    void init(const char* title);
+    virtual void init(const char* title);
 
     void handleEvents();
 
