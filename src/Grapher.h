@@ -32,7 +32,7 @@ class Grapher : public App {
 
     private:
 
-    void render(float deltaTime) override;
+    void render() override;
     void renderAxes();
     void renderGraph();
     void adjustForInterval(double intervalStart, double intervalEnd);

@@ -21,7 +21,7 @@ class App {
 
     virtual void init(const char* title);
 
-    virtual void render(float deltaTime) {
+    virtual void render() {
 
         SDL_RenderPresent(renderer);
 

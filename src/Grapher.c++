@@ -21,7 +21,7 @@ void Grapher::run() {
 
         clear();
 
-        render(1);
+        render();
 
         handleEvents();
 
@@ -176,7 +176,7 @@ void Grapher::renderGraph() {
 
 }
 
-void Grapher::render(float deltaTime) {
+void Grapher::render() {
 
     renderAxes();
 
