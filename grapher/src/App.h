@@ -5,6 +5,17 @@
 
 class App {
 
+    private:
+
+    bool running;
+    SDL_Window* window;
+
+    protected:
+
+    SDL_Renderer* renderer;
+    SDL_Event currentEvent;
+    int vWidth, vHeight;
+
     public:
 
     App(int vWidth, int vHeight);
@@ -14,7 +25,7 @@ class App {
 
     void handleEvents();
 
-    void render() {
+    virtual void render(float deltaTime) {
 
         SDL_RenderPresent(renderer);
 
@@ -39,13 +50,6 @@ class App {
     bool isRunning() {
         return running;
     }
-
-    private:
-    bool running;
-    SDL_Window* window;
-    int vWidth, vHeight;
-    SDL_Renderer* renderer;
-    SDL_Event currentEvent;
 
 };
 
