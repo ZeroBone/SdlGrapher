@@ -12,18 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="326448ee-90fb-427c-94d9-359163ffa2f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/grapher/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/cmake/FindSDL2.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/cmake/FindSDL2TTF.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/lib/cmake/SDL2/sdl2-config.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/lib/pkgconfig/SDL2_ttf.pc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/lib/pkgconfig/sdl2.pc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/main.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/src/App.c++" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/src/App.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/src/Grapher.c++" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/grapher/src/Grapher.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,11 +25,20 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Grapher.c++">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="483">
               <caret line="256" selection-start-line="256" selection-end-line="256" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="438">
+              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -73,6 +72,7 @@
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/src/Grapher.h" />
         <option value="$PROJECT_DIR$/src/Grapher.c++" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -169,6 +169,7 @@
       <workItem from="1550928373687" duration="68000" />
       <workItem from="1550928505518" duration="23867000" />
       <workItem from="1551043175929" duration="24000" />
+      <workItem from="1551043440573" duration="26000" />
     </task>
     <task id="LOCAL-00001" summary="Initial grapher">
       <created>1550928760770</created>
@@ -230,13 +231,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42458000" />
+    <option name="totallyTimeSpent" value="42484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="697" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29068825" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29554656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -384,6 +385,13 @@
           <folding>
             <element signature="e#47#67#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
         </state>
       </provider>
     </entry>
