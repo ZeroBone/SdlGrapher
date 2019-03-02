@@ -11,10 +11,24 @@ double mathF(double x) {
 
     /*if (x < 0.001) {
         return std::numeric_limits<double>::quiet_NaN();
+    }*/
+
+    /*if (x < 0.001) {
+        return std::numeric_limits<double>::quiet_NaN();
     }
 
     return log(x);*/
 
+    // return x * x;
+    // return sin(x) / cos(x);
+    // return sin(x) * cos(x);
+    // return sin(x) + cos(x);
+    // return sin(x) - cos(x);
+    // return 13 * x;
+    // return sqrt(x);
+    // return sqrt(x) * sin(x);
+    // return x*x*sin(x);
+    // return 1 / x;
     // return sin(x);
     // return cos(x);
 

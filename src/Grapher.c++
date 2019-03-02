@@ -80,8 +80,12 @@ void Grapher::renderAxes() {
     // vertical line
     SDL_RenderDrawLine(renderer, cx, 0, cx, vHeight);
 
-    int fromY = (int)floor(screenYToMathY(0));
-    int toY = (int)floor(screenYToMathY(vHeight));
+    // int fromY = (int)floor(screenYToMathY(0));
+    // int toY = (int)ceil(screenYToMathY(vHeight));
+    int fromY = (int)floor(screenYToMathY(vHeight));
+    int toY = (int)ceil(screenYToMathY(0));
+
+    // std::cout << fromY << " " << toY << std::endl;
 
     while (fromY <= toY) {
 

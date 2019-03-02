@@ -43,7 +43,7 @@ class Grapher : public App {
 
     double screenYToMathY(int screenY) {
 
-        return (screenY - cy) / scale;
+        return -(screenY - cy) / scale;
 
     }
 
