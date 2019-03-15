@@ -19,9 +19,15 @@ void Grapher::run() {
 
     while (isRunning()) {
 
-        clear();
+        if (rendering) {
 
-        render();
+            clear();
+
+            render();
+
+            rendering = false;
+
+        }
 
         handleEvents();
 
@@ -134,6 +140,8 @@ void Grapher::init(const char* title, const char* fontFile) {
     cx = vWidth / 2;
     cy = vHeight / 2;
 
+    rendering = true;
+
     labelFont = TTF_OpenFont(fontFile, 10);
 
 }
@@ -144,6 +152,8 @@ void Grapher::onResized() {
 
     cx = vWidth / 2;
     cy = vHeight / 2;
+
+    shouldRerender();
 
 }
 
@@ -172,7 +182,7 @@ void Grapher::renderGraph() {
         if (invalidValue) {
             invalidValue = false;
         }
-        else if (fabs(startMathY - mathY) > 50.) {}
+        else if (fabs(startMathY - mathY) > 40.) {}
         else {
 
             SDL_RenderDrawLine(
@@ -230,15 +240,15 @@ void Grapher::handleEvents() {
             case SDL_MOUSEWHEEL:
 
                 if (currentEvent.wheel.y > 0) {
-                    // Pull up code here!
 
                     scale += 0.75;
+                    shouldRerender();
 
                 }
                 else if (currentEvent.wheel.y < 0) {
-                    // Pull down code here!
 
                     scale -= 0.75;
+                    shouldRerender();
 
                 }
 
@@ -246,26 +256,27 @@ void Grapher::handleEvents() {
 
             case SDL_KEYDOWN:
 
-                // std::cout << currentEvent.key.keysym.sym << std::endl;
-                // std::cout << currentEvent.key.keysym.scancode << std::endl;
-
                 switch (currentEvent.key.keysym.scancode) {
 
-                    case SDL_SCANCODE_UP:
-                        cy += 2;
+                    /*case SDL_SCANCODE_UP:
+                        cy += 3;
+                        shouldRerender();
                         break;
 
                     case SDL_SCANCODE_DOWN:
-                        cy -= 2;
+                        cy -= 3;
+                        shouldRerender();
                         break;
 
                     case SDL_SCANCODE_LEFT:
-                        cx += 2;
+                        cx += 3;
+                        shouldRerender();
                         break;
 
                     case SDL_SCANCODE_RIGHT:
-                        cx -= 2;
-                        break;
+                        cx -= 3;
+                        shouldRerender();
+                        break;*/
 
                     case SDL_SCANCODE_I:
 
@@ -284,14 +295,29 @@ void Grapher::handleEvents() {
 
                         adjustForInterval(start, end);
 
+                        shouldRerender();
+
+                        break;
+
+                    case SDL_SCANCODE_ESCAPE:
+
+                        running = false;
+
                         break;
 
                     default:
+
+                        handleKeyPressOrRelease();
+
                         break;
 
                 }
 
                 break;
+
+            case SDL_KEYUP:
+
+                handleKeyPressOrRelease();
 
             default:
                 break;
